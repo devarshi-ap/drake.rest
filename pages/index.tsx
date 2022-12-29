@@ -5,11 +5,11 @@ import { promises as fs } from 'fs';
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 export default function Home({ random_quote }: { random_quote: string }) {
     const [quote, setQuote] = useState(random_quote);
-    const router = useRouter();
+    // const router = useRouter();
 
     async function handleClick() {
         fetch('/api/random')
@@ -53,7 +53,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                             <ul className="space-y-1 max-w-md list-disc list-inside text-gray-500 dark:text-gray-400">
                                 <li>
                                     <Link
-                                        href={`${router.basePath}/api/random`}
+                                        href={`/api/random`}
                                         className="font-semibold text-gray-800 dark:text-gray-300 underline decoration-green-500"
                                     >
                                         /api/random
@@ -62,7 +62,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                                 </li>
                                 <li>
                                     <Link
-                                        href={`${router.basePath}/api/all`}
+                                        href={`/api/all`}
                                         className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-red-500"
                                     >
                                         /api/all
