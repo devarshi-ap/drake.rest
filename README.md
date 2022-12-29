@@ -53,6 +53,27 @@
 
 ## Usage
 
+###### GET /api/quotes/random
+```json
+{
+    "quote": "Me and all the dogs acting like some dogs"
+}
+```
+
+###### GET /api/quotes/all
+```json
+{
+    "quote": {
+        "quotes": [
+            "Oh, who am I fooling?",
+            // ...and so on
+        ]
+    }
+}
+```
+<br />
+
+###### $ Dev. Setup
 Ensure [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) are installed on your machine. From your command line:
 
 ```bash
