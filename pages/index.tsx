@@ -5,6 +5,7 @@ import { promises as fs } from 'fs';
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import {TwitterShareButton} from 'react-twitter-embed'
 // import { useRouter } from 'next/router';
 
 export default function Home({ random_quote }: { random_quote: string }) {
@@ -87,7 +88,10 @@ export default function Home({ random_quote }: { random_quote: string }) {
                     <div className="flex flex-row justify-between space-x-4 text-xs mt-1 font-bold w-full px-2">
                         <p>don't quote me on this</p>
                         <span className="flex flex-row space-x-4">
-                            <p>💬 tweet</p>
+                            <TwitterShareButton
+                                url={'https://drake-rest.vercel.app/'}
+                                options={{ text: 'drake.rest is an awesome api for drake quotes! #6ix', via: 'thefirstdev' }}
+                            />
                             <button onClick={handleClick}>🔀 shuffle</button>
                         </span>
                     </div>
