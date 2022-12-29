@@ -13,7 +13,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
     // const router = useRouter();
 
     async function handleClick() {
-        fetch('/api/random')
+        fetch('/api/quotes/random')
             .then((res) => res.json())
             .then((data) => {
                 setQuote(data.quote);
