@@ -76,7 +76,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                                 <li>
                                     <Link
                                         href={`/api/_info`}
-                                        className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-red-500"
+                                        className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-blue-400"
                                     >
                                         /api/_info
                                     </Link>{' '}

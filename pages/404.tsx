@@ -35,7 +35,7 @@ export default function Custom404() {
                     <li>
                         <Link
                             href={`/api/_info`}
-                            className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-red-500"
+                            className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-violet-500"
                         >
                             /api/_info
                         </Link>{' '}
