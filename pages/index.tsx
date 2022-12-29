@@ -90,7 +90,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                         <span className="flex flex-col space-y-1">
                             <TwitterShareButton
                                 url={'https://drake-rest.vercel.app/'}
-                                options={{ text: `"${quote}" - Aubrey Graham, probably`, via: 'thefirstdev' }}
+                                options={{ text: `"${quote}" - Aubrey Graham, probably`}}
                             />
                             <button onClick={handleClick}>🔀 shuffle</button>
                         </span>
