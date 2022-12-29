@@ -29,23 +29,6 @@
     - `GET` `/api/quotes/all`
     - `GET` `/api/_info`
         - idea: API's should have an endpoint dedicated to providing info about itself (much like `man man` in linux)
-        ```json
-        {"info": {
-            "post": {
-                "tally": 0,
-                "endpoints": []
-            },
-            "get": {
-                "tally": 3,
-                "endpoints": [
-                    "/api/quotes/random",
-                    "/api/quotes/all"
-                    "/api/_info"
-                ]
-            },
-            // ... and so forth
-        }}
-        ```
 * Twitter Widget for sharing quote
 * Beautiful UI (if i don't say so myself)
 * Dark/Light mode
@@ -69,6 +52,27 @@
             // ...and so on
         ]
     }
+}
+```
+
+###### GET /api/_info
+```json
+{
+    "info": {
+        "post": {
+            "tally": 0,
+            "endpoints": []
+        },
+        "get": {
+            "tally": 3,
+            "endpoints": [
+                "/api/quotes/random",
+                "/api/quotes/all"
+                "/api/_info"
+            ]
+        },
+        // ... and so forth
+    }   
 }
 ```
 <br />
