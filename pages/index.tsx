@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import {TwitterShareButton} from 'react-twitter-embed'
+import { TwitterShareButton } from 'react-twitter-embed';
 // import { useRouter } from 'next/router';
 
 export default function Home({ random_quote }: { random_quote: string }) {
@@ -73,6 +73,15 @@ export default function Home({ random_quote }: { random_quote: string }) {
                                     </Link>{' '}
                                     ~ get JSON of all quotes
                                 </li>
+                                <li>
+                                    <Link
+                                        href={`/api/_info`}
+                                        className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-red-500"
+                                    >
+                                        /api/_info
+                                    </Link>{' '}
+                                    ~ get JSON of API info-manual
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -90,7 +99,9 @@ export default function Home({ random_quote }: { random_quote: string }) {
                         <span className="flex flex-col space-y-1">
                             <TwitterShareButton
                                 url={'https://drake-rest.vercel.app/'}
-                                options={{ text: `"${quote}" - Aubrey Graham, probably`}}
+                                options={{
+                                    text: `"${quote}" - Aubrey Graham, probably`,
+                                }}
                             />
                             <button onClick={handleClick}>🔀 shuffle</button>
                         </span>
@@ -107,7 +118,10 @@ export default function Home({ random_quote }: { random_quote: string }) {
                             @devarshi-ap
                         </a>
                     </span>
-                    <Link href="https://github.com/devarshi-ap/drake.rest" className='underline decoration-yellow-500'>
+                    <Link
+                        href="https://github.com/devarshi-ap/drake.rest"
+                        className="underline decoration-yellow-500"
+                    >
                         source
                     </Link>
                 </span>
