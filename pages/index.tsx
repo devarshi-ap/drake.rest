@@ -6,11 +6,9 @@ import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { TwitterShareButton } from 'react-twitter-embed';
-// import { useRouter } from 'next/router';
 
 export default function Home({ random_quote }: { random_quote: string }) {
     const [quote, setQuote] = useState(random_quote);
-    // const router = useRouter();
 
     async function handleClick() {
         fetch('/api/quotes/random')
