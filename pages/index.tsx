@@ -60,7 +60,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                                         href={`/api/random`}
                                         className="font-semibold text-gray-800 dark:text-gray-300 underline decoration-green-500"
                                     >
-                                        /api/random
+                                        /api/quotes/random
                                     </Link>{' '}
                                     ~ get JSON random quote
                                 </li>
@@ -69,7 +69,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                                         href={`/api/all`}
                                         className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-red-500"
                                     >
-                                        /api/all
+                                        /api/quotes/all
                                     </Link>{' '}
                                     ~ get JSON of all quotes
                                 </li>
