@@ -35,7 +35,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>"
                 />
             </Head>
-            
+
             <main className={styles.main}>
                 <HeadCard />
 
@@ -54,7 +54,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                             <TwitterShareButton
                                 url={'https://drake-rest.vercel.app/'}
                                 options={{
-                                    text: `"${quote}" - Aubrey Graham, probably`,
+                                    text: `"${quote}"\n\t- Aubrey Graham, probably\n\n`,
                                 }}
                             />
                             <button onClick={handleClick}>🔀 Shuffle</button>
