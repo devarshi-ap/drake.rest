@@ -1,21 +1,24 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import path from 'path';
-import { promises as fs } from "fs";
+import { promises as fs } from 'fs';
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-export default function Home({random_quote}: {random_quote: string}) {
+export default function Home({ random_quote }: { random_quote: string }) {
     const [quote, setQuote] = useState(random_quote);
-    
+    const router = useRouter();
+
     async function handleClick() {
         fetch('/api/random')
             .then((res) => res.json())
             .then((data) => {
-                setQuote(data.quote)
-            })
+                setQuote(data.quote);
+            });
     }
-    
+
     return (
         <>
             <Head>
@@ -35,23 +38,51 @@ export default function Home({random_quote}: {random_quote: string}) {
                     </p>
                 </div>
 
-                {/* QUOTE BOX */}
-                <div className="flex flex-col w-fit space-y-4">
+                <div className="flex flex-col w-fit space-y-6">
                     <div className={styles.center} />
-                    <span className="text-md">
-                        {
-                            '> A free REST API for random Drake quotes (Drake as a Service)'
-                        }
-                    </span>
+                    <div className="text-md flex flex-col">
+                        <span>
+                            {
+                                '> A free REST API for random Drake quotes (Drake as a Service)'
+                            }
+                        </span>
+                        <div className="mt-4">
+                            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
+                                GET:
+                            </h2>
+                            <ul className="space-y-1 max-w-md list-disc list-inside text-gray-500 dark:text-gray-400">
+                                <li>
+                                    <Link
+                                        href={`${router.basePath}/api/random`}
+                                        className="font-semibold text-gray-800 dark:text-gray-300 underline decoration-green-500"
+                                    >
+                                        /api/random
+                                    </Link>{' '}
+                                    ~ get JSON random quote
+                                </li>
+                                <li>
+                                    <Link
+                                        href={`${router.basePath}/api/all`}
+                                        className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-red-500"
+                                    >
+                                        /api/all
+                                    </Link>{' '}
+                                    ~ get JSON of all quotes
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <hr />
+
                     <div className={styles.thirteen}>
                         <p className="md:text-lg sm:text-md mb-4">"{quote}"</p>
-                        <p className="text-xs absolute bottom-4 right-4 text-gray-400">
+                        <p className="text-xs absolute bottom-4 right-4 text-gray-500 dark:text-gray-400">
                             - Aubrey Graham, probably
                         </p>
                     </div>
                     <div className="flex flex-row justify-between space-x-4 text-xs mt-1 font-bold w-full px-2">
-                        <p>localhost:3000</p>
+                        <p>don't quote me on this</p>
                         <span className="flex flex-row space-x-4">
                             <p>💬 tweet</p>
                             <button onClick={handleClick}>🔀 shuffle</button>
@@ -59,21 +90,32 @@ export default function Home({random_quote}: {random_quote: string}) {
                     </div>
                 </div>
 
-                <span className="text-xs font-extralight w-fit mx-auto">
-                    made with 💛
+                <span className="text-xs font-extralight w-fit mx-auto flex flex-col text-center">
+                    <span>
+                        made with 💛 by{' '}
+                        <a
+                            href="https://github.com/devarshi-ap"
+                            className="font-medium underline decoration-blue-500"
+                        >
+                            @devarshi-ap
+                        </a>
+                    </span>
+                    <Link href="https://github.com/devarshi-ap/drake.rest" className='underline decoration-yellow-500'>
+                        source
+                    </Link>
                 </span>
             </main>
         </>
     );
 }
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getStaticProps: GetStaticProps = async (context) => {
     const jsonDir = path.join(process.cwd(), 'json');
-    const fileContents = await fs.readFile(jsonDir + '/quotes.json', 'utf8')
+    const fileContents = await fs.readFile(jsonDir + '/quotes.json', 'utf8');
     var quotes_obj: { quotes: string[] } = JSON.parse(fileContents.toString());
-    var random_quote = quotes_obj.quotes[Math.floor(Math.random()*quotes_obj.quotes.length)];
-    
+    var random_quote =
+        quotes_obj.quotes[Math.floor(Math.random() * quotes_obj.quotes.length)];
     return {
-        props: { random_quote }
-    }
-}
+        props: { random_quote },
+    };
+};
