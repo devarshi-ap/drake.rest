@@ -20,7 +20,7 @@
   <a href="#a-blurb">A Blurb</a> •
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+https://user-images.githubusercontent.com/59234436/210021815-dbdfe7b3-0775-4029-a4a6-2831b282c470.mov
 
 ## Key Features
 
