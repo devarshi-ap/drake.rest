@@ -57,7 +57,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                             <ul className="space-y-1 max-w-md list-disc list-inside text-gray-500 dark:text-gray-400">
                                 <li>
                                     <Link
-                                        href={`/api/random`}
+                                        href={`/api/quotes/random`}
                                         className="font-semibold text-gray-800 dark:text-gray-300 underline decoration-green-500"
                                     >
                                         /api/quotes/random
@@ -66,7 +66,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
                                 </li>
                                 <li>
                                     <Link
-                                        href={`/api/all`}
+                                        href={`/api/quotes/all`}
                                         className="font-semibold underline text-gray-800 dark:text-gray-300 decoration-red-500"
                                     >
                                         /api/quotes/all
