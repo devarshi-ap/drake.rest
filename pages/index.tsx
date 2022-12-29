@@ -4,7 +4,7 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 import { TwitterShareButton } from 'react-twitter-embed';
 import QuoteBox from '../components/QuoteBox';
 import About from '../components/About';
