@@ -41,13 +41,13 @@ export default function Home({ random_quote }: { random_quote: string }) {
 
                 <div className="flex flex-col w-fit space-y-6">
                     <div className={styles.center} />
-                    
+
                     <About />
 
                     <hr />
 
                     <QuoteBox quote={quote} />
-                    
+
                     <div className="flex flex-row justify-between space-x-4 text-xs mt-1 font-bold w-full px-2">
                         <p>don't quote me on this</p>
                         <span className="flex flex-col space-y-1">
@@ -68,7 +68,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
     );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
     const jsonDir = path.join(process.cwd(), 'json');
     const fileContents = await fs.readFile(jsonDir + '/quotes.json', 'utf8');
     var quotes_obj: { quotes: string[] } = JSON.parse(fileContents.toString());
