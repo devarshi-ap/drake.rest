@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<h1 align="center">
+  drake.rest
+  <br>
+  <img src="https://i.pinimg.com/originals/53/b6/88/53b6885e1f74752065df7e479c5403ee.gif" alt="Drake" width="200"></img>
+  <br>
+</h1>
 
-First, run the development server:
+<h4 align="center">A public REST API for random Drake quotes + lyrics (Drake as a Service).</h4>
+
+<p align="center">
+    <img src="https://vercelbadge.vercel.app/api/devarshi-ap/drake.rest"
+            alt="VercelBadge">
+</p>
+
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#tech-specs">Tech Specs</a> •
+  <a href="#a-blurb">A Blurb</a> •
+</p>
+
+![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+
+## Key Features
+
+* API endpoints to serve random Drake quote(s) on request
+    - `GET` `/api/quotes/random`
+    - `GET` `/api/quotes/all`
+    - `GET` `/api/_info`
+        - idea: API's should have an endpoint dedicated to providing info about itself (much like `man man` in linux)
+        ```json
+        {"info": {
+            "post": {
+                "tally": 0,
+                "endpoints": []
+            },
+            "get": {
+                "tally": 3,
+                "endpoints": [
+                    "/api/quotes/random",
+                    "/api/quotes/all"
+                    "/api/_info"
+                ]
+            },
+            // ... and so forth
+        }}
+        ```
+* Twitter Widget for sharing quote
+* Beautiful UI (if i don't say so myself)
+* Dark/Light mode
+* Responsive Design
+
+## Usage
+
+Ensure [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) are installed on your machine. From your command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone this repo
+$ git clone https://github.com/devarshi-ap/drake.rest.git
+
+# Go into the repo
+$ cd drake.rest
+
+# Install dependencies
+$ npm install
+
+# Run the dev-server
+$ npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Specs
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Here's the toolkit I chose, and my ratinoale as to why:
+<div style="display: inline">
+    <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white">
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+    <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
+    <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white">
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white">
+</div>
+<br />
+<span>Nextjs</span>
+<ul>
+    <li>out-of-the-box routing for Pages & API endpoints which helps keep the workdir organized.</li>
+    <li>The GetStaticProps async function helps generate data on build-time also supports cache-control for the API responses</li>
+    <li>For the future, test out the Edge API Routes which are fast and smaller in size</li>
+    <li>Easy deployment to Vercel in a matter of seconds</li>
+</ul>
+<span>TypeScript</span>
+<ul>
+    <li>enforces type-safety to all functions & variables, reducing chances of type errors</li>
+    <li>improves developer exp., refrence validation, and code maintainability</li>
+</ul>
+<span>Tailwind CSS</span>
+<ul>
+    <li>although inline Tailwind styling can get really long at times, I visioned the design to be minimalist, thus, Tailwind was perfect simply because I am most familiar with it</li>
+</ul>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## A Blurb
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+> 💡 Project idea:
+> Let this repo act as a template for a random <quote\general-string> generator!
+> 1. Clone this repo
+> 2. Change /json/quotes.json to include quotes from _, or a general set of strings.
+> 3. Update UI in index.tsx accordingly
+> 4. Deploy it and...💥 you're done!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> This project was inspired from [@ajzbc/kanye.rest](https://github.com/ajzbc/kanye.rest)
