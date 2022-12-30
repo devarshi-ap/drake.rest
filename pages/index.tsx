@@ -25,11 +25,13 @@ export default function Home({ random_quote }: { random_quote: string }) {
         <>
             <Head>
                 <title>drake.rest</title>
-                <meta name="description" content="Drake as a Service" />
+                <meta name="description" content="A free, public REST API for random Drake quotes & lyrics (Drake as a Service)" />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
+                <meta name="author" content="Devarshi Patel"/>
+                <meta name="keywords" content="Drake, API, REST, REST-API, Quotes, Random, Quote, Aubrey Graham, Champagne Papi, Quote Generator, Twitter, Dev, Devarshi, Devarshi Patel"/>
                 <link
                     rel="icon"
                     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>"
