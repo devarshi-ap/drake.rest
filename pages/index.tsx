@@ -53,13 +53,13 @@ export default function Home({ random_quote }: { random_quote: string }) {
                     <div className="flex flex-row justify-between space-x-4 text-xs mt-1 font-bold w-full px-2">
                         <p>don't quote me on this</p>
                         <span className="flex flex-col space-y-1">
+                            <button onClick={handleClick}>🔀 Shuffle</button>
                             <TwitterShareButton
                                 url={'https://drake-rest.vercel.app/'}
                                 options={{
                                     text: `"${quote}"\n\t- Aubrey Graham, probably\n\n`,
                                 }}
                             />
-                            <button onClick={handleClick}>🔀 Shuffle</button>
                         </span>
                     </div>
                 </div>
