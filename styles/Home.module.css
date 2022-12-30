@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem;
+    width: 28rem;
+    margin: 0 auto;
     min-height: 100vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
         sans-serif;
@@ -67,7 +69,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    max-width: 30rem;
+    width: 100%;
     height: fit-content;
     padding: 2rem 1.75rem;
     transform: translateZ(0);
