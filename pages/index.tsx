@@ -9,6 +9,7 @@ import QuoteBox from '../components/QuoteBox';
 import About from '../components/About';
 import HeadCard from '../components/HeadCard';
 import Tweet from '../components/Tweet';
+import { motion } from 'framer-motion'
 
 export default function Home({ random_quote }: { random_quote: string }) {
     const [quote, setQuote] = useState(random_quote);
@@ -22,7 +23,13 @@ export default function Home({ random_quote }: { random_quote: string }) {
     }
 
     return (
-        <>
+        <motion.div
+            initial={{ y:"10%", opacity: 0.1, scale: 1 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{duration: 0.4, ease: 'easeIn'}}
+            exit={{ opacity: 0 }}
+            className="flex flex-grow border-[#000] items-center"
+        >
             <Head>
                 <title>drake.rest</title>
                 <meta
@@ -54,7 +61,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
 
                     <hr />
 
-                    <QuoteBox quote={quote} />
+                    <QuoteBox quote={quote}/>
 
                     <div className="flex flex-row justify-between space-x-4 text-xs mt-1 font-bold w-full px-2">
                         <p>don't quote me on this</p>
@@ -67,7 +74,7 @@ export default function Home({ random_quote }: { random_quote: string }) {
 
                 <Footer />
             </main>
-        </>
+        </motion.div>
     );
 }
 
