@@ -20,7 +20,9 @@
   <a href="#a-blurb">A Blurb</a> •
 </p>
 
-https://user-images.githubusercontent.com/59234436/210021815-dbdfe7b3-0775-4029-a4a6-2831b282c470.mov
+
+https://user-images.githubusercontent.com/59234436/210157522-bf35afc3-3d7e-4151-88e6-d6a99b867938.mov
+
 
 ## Key Features
 
