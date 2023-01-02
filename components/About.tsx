@@ -15,17 +15,17 @@ export default function About() {
                     <Endpoint
                         path="/api/quotes/random"
                         color="green"
-                        description="get JSON random quote"
+                        description="get random quote"
                     />
                     <Endpoint
                         path="/api/quotes/all"
                         color="red"
-                        description="get JSON of all quotes"
+                        description="get all quotes"
                     />
                     <Endpoint
                         path="/api/_info"
                         color="blue"
-                        description="get JSON of API info-manual"
+                        description="get API info-manual"
                     />
                 </ul>
             </div>

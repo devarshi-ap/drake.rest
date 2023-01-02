@@ -21,7 +21,7 @@ export default function Custom404() {
                         >
                             /api/quotes/random
                         </Link>{' '}
-                        ~ get JSON random quote
+                        ~ get random quote
                     </li>
                     <li>
                         <Link
@@ -30,7 +30,7 @@ export default function Custom404() {
                         >
                             /api/quotes/all
                         </Link>{' '}
-                        ~ get JSON of all quotes
+                        ~ get all quotes
                     </li>
                     <li>
                         <Link
