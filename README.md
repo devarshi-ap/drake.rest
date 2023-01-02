@@ -48,12 +48,10 @@ https://user-images.githubusercontent.com/59234436/210157522-bf35afc3-3d7e-4151-
 ###### GET /api/quotes/all
 ```json
 {
-    "quote": {
-        "quotes": [
-            "Oh, who am I fooling?",
-            // ...and so on
-        ]
-    }
+    "quotes": [
+        "Oh, who am I fooling?",
+        // ...and so on
+    ]
 }
 ```
 
