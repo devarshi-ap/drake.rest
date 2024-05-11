@@ -9,8 +9,7 @@
 <h4 align="center">A public REST API for random Drake quotes + lyrics (Drake as a Service).</h4>
 
 <p align="center">
-    <img src="https://vercelbadge.vercel.app/api/devarshi-ap/drake.rest"
-            alt="VercelBadge">
+    <img src="https://vercelbadge.vercel.app/api/devarshi-ap/drake.rest" alt="VercelBadge">
 </p>
 
 <p align="center">
